@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "linkedin/version"
+require "linked_in/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "linkedin"
-  spec.version       = Linkedin::VERSION
+  spec.name          = "linkedin-ruby"
+  spec.version       = LinkedIn::VERSION
   spec.authors       = ["prakash"]
   spec.email         = ["prakash@mallow-tech.com"]
 
