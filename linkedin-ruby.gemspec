@@ -46,6 +46,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   # We use VCR to mock LinkedIn API calls
-  gem.add_development_dependency "vcr"
-  gem.add_development_dependency "webmock"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "webmock"
 end
