@@ -20,6 +20,8 @@ require "linked_in/access_token"
 require "linked_in/api"
 require "linked_in/api_resource"
 require "linked_in/share_and_social_stream"
+require 'linked_in/people'
+require "linked_in/organizations"
 
 module LinkedIn
   @config = Configuration.new
