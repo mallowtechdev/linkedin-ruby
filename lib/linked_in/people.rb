@@ -33,7 +33,7 @@ module LinkedIn
     # @see http://developer.linkedin.com/documents/profile-api
     # @macro profile_args
     # @macro multi_profile_options
-    def profile(id={}, options={})
+    def profile(id = {}, options = {})
       options = parse_id(id, options)
       path = profile_path(options)
       get(path, options)
@@ -46,7 +46,7 @@ module LinkedIn
     #
     # @see http://developer.linkedin.com/documents/connections-api
     # @macro profile_args
-    def connections(id={}, options={})
+    def connections(id = {}, options = {})
       options = parse_id(id, options)
       path = "#{profile_path(options, false)}/connections"
       get(path, options)
@@ -65,7 +65,7 @@ module LinkedIn
     # @param [Hash] opts profile options
     # @macro profile_options
     # @return [LinkedIn::Mash]
-    def new_connections(since, options={})
+    def new_connections(since, options = {})
       since = parse_modified_since(since)
       options.merge!('modified' => 'new', 'modified-since' => since)
       path = "#{profile_path(options, false)}/connections"
@@ -82,7 +82,7 @@ module LinkedIn
     # @options [String] :secure, default: 'false', options: ['false','true']
     #
     # example for use in code: client.picture_urls(:id => 'id_of_connection')
-    def picture_urls(options={})
+    def picture_urls(options = {})
       picture_size = options.delete(:picture_size) || 'original'
       path = "#{profile_path(options)}/picture-urls::(#{picture_size})"
       get(path, options)
@@ -91,7 +91,7 @@ module LinkedIn
     # Retrieve the skills
     #
     # Permissions: r_fullprofile
-    def skills(id={}, options={})
+    def skills(id = {}, options = {})
       options = parse_id(id, options)
       path = "#{profile_path(options, false)}/skills"
       get(path, options)

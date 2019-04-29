@@ -18,6 +18,14 @@ module LinkedIn
 
     extend Forwardable # Composition over inheritance
 
+    def_delegators :@people, :profile,
+                   :skills,
+                   :connections,
+                   :picture_urls,
+                   :new_connections
+
+    def_delegators :@search, :search
+
     def_delegators :@organizations, :organization,
                    :brand,
                    :organization_acls,
@@ -27,17 +35,29 @@ module LinkedIn
                    :organization_share_statistics,
                    :organization_follower_count
 
-    def_delegators :@share_and_social_stream, :share
+    def_delegators :@share_and_social_stream, :shares,
+                   :share,
+                   :likes,
+                   :like,
+                   :unlike,
+                   :comments,
+                   :comment,
+                   :get_share,
+                   :get_social_actions,
+                   :migrate_update_keys
+
     private ##############################################################
 
     def initialize_endpoints
+      @people = LinkedIn::People.new(@connection)
+      @search = LinkedIn::Search.new(@connection)
       @organizations = LinkedIn::Organizations.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
     end
 
     def default_headers
       # https://developer.linkedin.com/documents/api-requests-json
-      return {"Authorization" => "Bearer #{@access_token.token}"}
+      return {"x-li-format" => "json", "Authorization" => "Bearer #{@access_token.token}"}
     end
 
     def verify_access_token!(access_token)

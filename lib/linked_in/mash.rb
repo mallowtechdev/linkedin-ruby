@@ -65,3 +65,4 @@ module LinkedIn
       word
     end
   end
+end

@@ -17,11 +17,23 @@ require "linked_in/connection"
 # Data object to wrap API access token
 require "linked_in/access_token"
 
-require "linked_in/api"
+# Coerces LinkedIn JSON to a nice Ruby hash
+# LinkedIn::Mash inherits from Hashie::Mash
+require "hashie"
+require "linked_in/mash"
+
+# Endpoints inherit from APIResource
 require "linked_in/api_resource"
-require "linked_in/share_and_social_stream"
-require 'linked_in/people'
+
+# All of the endpoints
+require "linked_in/people"
+require "linked_in/search"
 require "linked_in/organizations"
+require "linked_in/share_and_social_stream"
+
+# The primary API object that makes requests.
+# It composes in all of the endpoints
+require "linked_in/api"
 
 module LinkedIn
   @config = Configuration.new
