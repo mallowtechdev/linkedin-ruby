@@ -24,8 +24,6 @@ module LinkedIn
                    :picture_urls,
                    :new_connections
 
-    def_delegators :@search, :search
-
     def_delegators :@organizations, :organization,
                    :brand,
                    :organization_acls,
@@ -50,7 +48,6 @@ module LinkedIn
 
     def initialize_endpoints
       @people = LinkedIn::People.new(@connection)
-      @search = LinkedIn::Search.new(@connection)
       @organizations = LinkedIn::Organizations.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
     end

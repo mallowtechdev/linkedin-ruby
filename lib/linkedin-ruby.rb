@@ -27,7 +27,6 @@ require "linked_in/api_resource"
 
 # All of the endpoints
 require "linked_in/people"
-require "linked_in/search"
 require "linked_in/organizations"
 require "linked_in/share_and_social_stream"
 
