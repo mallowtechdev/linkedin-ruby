@@ -38,7 +38,7 @@ module LinkedIn
 
     @credentials_missing = "Client credentials do not exist. Please either pass your client_id and client_secret to the LinkedIn::Oauth.new constructor or set them via LinkedIn.configure"
 
-    @redirect_uri_mismatch = "Throttle limit for calls to this resource is reached"
+    @redirect_uri_mismatch = "Redirect URI mismatch error. Please check your the redierct uri params."
     
     def klass
       

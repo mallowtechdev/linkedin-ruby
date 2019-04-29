@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.linkedin.com/uas/oauth2/accessToken
+    uri: https://www.linkedin.com/oauth/v2/accessToken
     body:
       encoding: UTF-8
       string: client_id=dummy_client_id&client_secret=dummy_client_secret&code=dummy_code&grant_type=authorization_code&raise_errors=true&redirect_uri=http%3A%2F%2Flvh.me

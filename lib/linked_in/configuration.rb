@@ -34,8 +34,8 @@ module LinkedIn
       @api = "https://api.linkedin.com"
       @api_version = "/v2"
       @site = "https://www.linkedin.com"
-      @token_url = "/uas/oauth2/accessToken"
-      @authorize_url = "/uas/oauth2/authorization"
+      @token_url = "/oauth/v2/accessToken"
+      @authorize_url = "/oauth/v2/authorization"
     end
   end
 end
