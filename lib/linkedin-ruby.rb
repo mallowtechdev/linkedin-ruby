@@ -17,6 +17,10 @@ require "linked_in/connection"
 # Data object to wrap API access token
 require "linked_in/access_token"
 
+require "linked_in/api"
+require "linked_in/api_resource"
+require "linked_in/share_and_social_stream"
+
 module LinkedIn
   @config = Configuration.new
 
