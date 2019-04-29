@@ -18,7 +18,7 @@ module LinkedIn
       self.options.params_encoder = ::Faraday::FlatParamsEncoder
 
       middleware = Faraday::RackBuilder::Handler.new(LinkedIn::RaiseError)
-      self.response :linkedin_raise_error
+      self.builder.handlers.push(middleware)
     end
 
 
