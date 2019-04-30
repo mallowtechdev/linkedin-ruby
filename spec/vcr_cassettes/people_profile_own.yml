@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.linkedin.com/v2/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Li-Format:
+      - json
+      Authorization:
+      - Bearer AQUb8REc0NLIzDyHSd4tIvyGlZ4WEd1Lsb1XoYOCKYu44U3oNRFJT61n2xb1UDR7wKj5OM2NAenTkZrCpUcovO2queOgv95TSyd6U47biDtFN07qVQCay0onN48L_lXOAP_xJQKS1wYWnvNW5k10v9-eiecyofftOh-Auo-8SKs4SmPGAdqv1AppmKpAMpMFK9pfwRVEBmPCwCLcwtLcE0tA15Lj9bnaNJuSpjt9XdvMYAnLQiYIamKX5Nu0nkjVhbQbnHQI_v6g4PyAcgBulOs0WLkwj1yJ89DTF2aGeFLcJItxas_E8ETAK3SD_VBT4sInVQL9ZRQ_B7vVPz7YK0dwCJHKVQ
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Li-Responseorigin:
+      - RGW
+      X-Restli-Gateway-Error:
+      - 'true'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '91'
+      Date:
+      - Tue, 30 Apr 2019 13:50:50 GMT
+      X-Li-Fabric:
+      - prod-ltx1
+      Connection:
+      - keep-alive
+      X-Li-Pop:
+      - prod-tmu1
+      X-Li-Proto:
+      - http/1.1
+      X-Li-Uuid:
+      - tR6llchEmhVgSM013yoAAA==
+      Set-Cookie:
+      - lidc="b=TB92:g=1723:u=24:i=1556632249:t=1556707328:s=AQE2n9HLtnvqMlFocaYvyuW8uBD174n4"
+      X-Li-Route-Key:
+      - '"b=TB92:g=1723:u=24:i=1556632249:t=1556707328:s=AQE2n9HLtnvqMlFocaYvyuW8uBD174n4"'
+    body:
+      encoding: UTF-8
+      string: '{"serviceErrorCode":100,"message":"Not enough permissions to access:
+        GET /me","status":403}'
+    http_version: 
+  recorded_at: Tue, 30 Apr 2019 13:50:50 GMT
+recorded_with: VCR 4.0.0
