@@ -18,31 +18,12 @@ module LinkedIn
 
     extend Forwardable # Composition over inheritance
 
-    def_delegators :@people, :profile,
-                   :skills,
-                   :connections,
-                   :picture_urls,
-                   :new_connections
+    def_delegators :@people, :profile
 
     def_delegators :@organizations, :organization,
-                   :brand,
-                   :organization_acls,
-                   :organization_search,
-                   :organization_page_statistics,
-                   :organization_follower_statistics,
-                   :organization_share_statistics,
-                   :organization_follower_count
+                   :organization_acls
 
-    def_delegators :@share_and_social_stream, :shares,
-                   :share,
-                   :likes,
-                   :like,
-                   :unlike,
-                   :comments,
-                   :comment,
-                   :get_share,
-                   :get_social_actions,
-                   :migrate_update_keys
+    def_delegators :@share_and_social_stream, :share
 
     private ##############################################################
 
@@ -58,7 +39,7 @@ module LinkedIn
     end
 
     def verify_access_token!(access_token)
-      if not access_token.is_a? LinkedIn::AccessToken
+      unless access_token.is_a? LinkedIn::AccessToken
         raise no_access_token_error
       end
     end

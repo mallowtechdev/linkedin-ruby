@@ -13,8 +13,8 @@ module LinkedIn
   # terms in the config.
   #
   # * LinkedIn.config.site = "https://www.linkedin.com"
-  # * LinkedIn.config.token_url = "/uas/oauth2/accessToken"
-  # * LinkedIn.config.authorize_url = "/uas/oauth2/authorization"
+  # * LinkedIn.config.token_url = "/oauth/v2/accessToken"
+  # * LinkedIn.config.authorize_url = "/oauth/v2/authorization"
   class Configuration
     attr_accessor :api,
                   :site,

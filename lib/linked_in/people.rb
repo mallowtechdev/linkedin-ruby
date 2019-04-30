@@ -39,75 +39,6 @@ module LinkedIn
       get(path, options)
     end
 
-    # Retrieve a list of 1st degree connections for a user who has
-    # granted access to his/her account
-    #
-    # Permissions: r_network
-    #
-    # @see http://developer.linkedin.com/documents/connections-api
-    # @macro profile_args
-    def connections(id = {}, options = {})
-      options = parse_id(id, options)
-      path = "#{profile_path(options, false)}/connections"
-      get(path, options)
-    end
-
-    # Retrieve a list of the latest set of 1st degree connections for a
-    # user
-    #
-    # Permissions: r_network
-    #
-    # @see http://developer.linkedin.com/documents/connections-api
-    #
-    # @param [String, Fixnum, Time] modified_since timestamp in unix time
-    #   miliseconds indicating since when you want to retrieve new
-    #   connections
-    # @param [Hash] opts profile options
-    # @macro profile_options
-    # @return [LinkedIn::Mash]
-    def new_connections(since, options = {})
-      since = parse_modified_since(since)
-      options.merge!('modified' => 'new', 'modified-since' => since)
-      path = "#{profile_path(options, false)}/connections"
-      get(path, options)
-    end
-
-    # Retrieve the picture url
-    # http://api.linkedin.com/v1/people/~/picture-urls::(original)
-    #
-    # Permissions: r_network
-    #
-    # @options [String] :id, the id of the person for whom you want the profile picture
-    # @options [String] :picture_size, default: 'original'
-    # @options [String] :secure, default: 'false', options: ['false','true']
-    #
-    # example for use in code: client.picture_urls(:id => 'id_of_connection')
-    def picture_urls(options = {})
-      picture_size = options.delete(:picture_size) || 'original'
-      path = "#{profile_path(options)}/picture-urls::(#{picture_size})"
-      get(path, options)
-    end
-
-    # Retrieve the skills
-    #
-    # Permissions: r_fullprofile
-    def skills(id = {}, options = {})
-      options = parse_id(id, options)
-      path = "#{profile_path(options, false)}/skills"
-      get(path, options)
-    end
-
-
-    protected ############################################################
-
-
-    def get(path, options)
-# TODO LIv2 : Investigate, not sure this is needed, secure is always on?
-#      options[:"secure-urls"] = true unless options[:secure] == false
-      super path, options
-    end
-
-
     private ##############################################################
 
 
@@ -125,26 +56,6 @@ module LinkedIn
       end
 
       return options
-    end
-
-    # Returns a unix time in miliseconds
-    def parse_modified_since(since)
-      if since.is_a? ::Fixnum
-        if ::Time.at(since).year < 2050
-          # Got passed in as seconds.
-          since = since * 1000
-        end
-      elsif since.is_a? ::String
-        since = utc_parse(since)
-      elsif since.is_a? ::Time
-        since = since.to_i * 1000
-      end
-      return since
-    end
-
-    def utc_parse(since)
-      t = ::Time.parse(since)
-      Time.utc(t.year, t.month, t.day, t.hour, t.min, t.sec).to_i * 1000
     end
 
   end
