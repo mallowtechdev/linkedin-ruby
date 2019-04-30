@@ -4,8 +4,8 @@ describe "LinkedIn configuration" do
   let(:config_value) { "Foo Bar" }
 
   let(:site)          { "https://www.linkedin.com"  }
-  let(:token_url)     { "/uas/oauth2/accessToken"   }
-  let(:authorize_url) { "/uas/oauth2/authorization" }
+  let(:token_url)     { "/oauth/v2/accessToken"   }
+  let(:authorize_url) { "/oauth/v2/authorization" }
 
   subject { LinkedIn.config }
 

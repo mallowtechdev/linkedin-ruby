@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.linkedin.com/v2/organizations/11571530
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Li-Format:
+      - json
+      Authorization:
+      - Bearer dummy access token
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Li-Responseorigin:
+      - RGW
+      X-Restli-Gateway-Error:
+      - 'true'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '72'
+      Date:
+      - Tue, 30 Apr 2019 13:49:57 GMT
+      X-Li-Fabric:
+      - prod-ltx1
+      Connection:
+      - keep-alive
+      X-Li-Pop:
+      - prod-tmu1
+      X-Li-Proto:
+      - http/1.1
+      X-Li-Uuid:
+      - fAd/YLxEmhVgDoou4CoAAA==
+      Set-Cookie:
+      - lidc="b=TB88:g=1666:u=1:i=1556632197:t=1556718597:s=AQF9MPBrGmd4GIXmtVtmKnRqcl2Z9lRW";
+        Expires=Wed, 01 May 2019 13:49:57 GMT; domain=.linkedin.com; Path=/
+    body:
+      encoding: UTF-8
+      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
+    http_version: 
+  recorded_at: Tue, 30 Apr 2019 13:49:57 GMT
+recorded_with: VCR 4.0.0

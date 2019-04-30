@@ -15,9 +15,4 @@ describe LinkedIn do
     end
   end
 
-  # describe LinkedIn::API do
-  #   it "is a class" do
-  #     expect(LinkedIn::API).to be_a Class
-  #   end
-  # end
 end
