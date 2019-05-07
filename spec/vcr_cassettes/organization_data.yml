@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.linkedin.com/v2/organizations/11571530
+    uri: https://api.linkedin.com/v2/organizations/14418463
     body:
       encoding: US-ASCII
       string: ''
@@ -19,21 +19,23 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       X-Li-Responseorigin:
       - RGW
-      X-Restli-Gateway-Error:
-      - 'true'
       Content-Type:
       - application/json
-      Content-Length:
-      - '72'
       Date:
-      - Tue, 30 Apr 2019 13:49:57 GMT
+      - Tue, 07 May 2019 07:01:22 GMT
+      Server:
+      - Play
+      X-Restli-Protocol-Version:
+      - 1.0.0
+      Content-Length:
+      - '910'
       X-Li-Fabric:
-      - prod-ltx1
+      - prod-lsg1
       Connection:
       - keep-alive
       X-Li-Pop:
@@ -41,13 +43,18 @@ http_interactions:
       X-Li-Proto:
       - http/1.1
       X-Li-Uuid:
-      - fAd/YLxEmhVgDoou4CoAAA==
+      - KL6ViYBUnBWAVtwpCSsAAA==
       Set-Cookie:
-      - lidc="b=TB88:g=1666:u=1:i=1556632197:t=1556718597:s=AQF9MPBrGmd4GIXmtVtmKnRqcl2Z9lRW";
-        Expires=Wed, 01 May 2019 13:49:57 GMT; domain=.linkedin.com; Path=/
+      - lidc="b=SB27:g=102:u=173:i=1557212482:t=1557235057:s=AQGYfoLzxc3ug-RjrsjpnrdTsKmuepg5"
+      X-Li-Route-Key:
+      - '"b=SB27:g=102:u=173:i=1557212482:t=1557235057:s=AQGYfoLzxc3ug-RjrsjpnrdTsKmuepg5"'
     body:
       encoding: UTF-8
-      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
+      string: '{"vanityName":"test-app-2","website":{"localized":{"en_US":"http://www.example.com"},"preferredLocale":{"country":"US","language":"en"}},"localizedName":"Test
+        App 2","description":{"localized":{"en_US":"test app"},"preferredLocale":{"country":"US","language":"en"}},"groups":[],"versionTag":"2388895306","defaultLocale":{"country":"US","language":"en"},"organizationType":"SELF_EMPLOYED","alternativeNames":[],"specialties":[],"staffCountRange":"SIZE_1","localizedSpecialties":[],"industries":["urn:li:industry:96"],"name":{"localized":{"en_US":"Test
+        App 2"},"preferredLocale":{"country":"US","language":"en"}},"locations":[{"address":{"geographicArea":"Tamil
+        Nadu","country":"IN","city":"Dindigul","line1":"Karur Road"},"staffCountRange":"SIZE_1","locationType":"HEADQUARTERS"}],"id":14418463,"localizedDescription":"test
+        app","$URN":"urn:li:organization:14418463","localizedWebsite":"http://www.example.com"}'
     http_version: 
-  recorded_at: Tue, 30 Apr 2019 13:49:57 GMT
+  recorded_at: Tue, 07 May 2019 07:01:22 GMT
 recorded_with: VCR 4.0.0

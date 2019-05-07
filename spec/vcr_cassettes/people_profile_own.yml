@@ -10,7 +10,7 @@ http_interactions:
       X-Li-Format:
       - json
       Authorization:
-      - Bearer AQUb8REc0NLIzDyHSd4tIvyGlZ4WEd1Lsb1XoYOCKYu44U3oNRFJT61n2xb1UDR7wKj5OM2NAenTkZrCpUcovO2queOgv95TSyd6U47biDtFN07qVQCay0onN48L_lXOAP_xJQKS1wYWnvNW5k10v9-eiecyofftOh-Auo-8SKs4SmPGAdqv1AppmKpAMpMFK9pfwRVEBmPCwCLcwtLcE0tA15Lj9bnaNJuSpjt9XdvMYAnLQiYIamKX5Nu0nkjVhbQbnHQI_v6g4PyAcgBulOs0WLkwj1yJ89DTF2aGeFLcJItxas_E8ETAK3SD_VBT4sInVQL9ZRQ_B7vVPz7YK0dwCJHKVQ
+      - Bearer dummy access token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -19,21 +19,21 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       X-Li-Responseorigin:
       - RGW
-      X-Restli-Gateway-Error:
-      - 'true'
       Content-Type:
       - application/json
+      X-Restli-Protocol-Version:
+      - 1.0.0
       Content-Length:
-      - '91'
+      - '338'
       Date:
-      - Tue, 30 Apr 2019 13:50:50 GMT
+      - Tue, 07 May 2019 07:09:34 GMT
       X-Li-Fabric:
-      - prod-ltx1
+      - prod-lsg1
       Connection:
       - keep-alive
       X-Li-Pop:
@@ -41,15 +41,14 @@ http_interactions:
       X-Li-Proto:
       - http/1.1
       X-Li-Uuid:
-      - tR6llchEmhVgSM013yoAAA==
+      - vldPKfNUnBWgPJZxHisAAA==
       Set-Cookie:
-      - lidc="b=TB92:g=1723:u=24:i=1556632249:t=1556707328:s=AQE2n9HLtnvqMlFocaYvyuW8uBD174n4"
+      - lidc="b=SB27:g=102:u=173:i=1557212974:t=1557235057:s=AQFDarb9DW6uYzK0Ezi4ZIRWgRw7i_Cj"
       X-Li-Route-Key:
-      - '"b=TB92:g=1723:u=24:i=1556632249:t=1556707328:s=AQE2n9HLtnvqMlFocaYvyuW8uBD174n4"'
+      - '"b=SB27:g=102:u=173:i=1557212974:t=1557235057:s=AQFDarb9DW6uYzK0Ezi4ZIRWgRw7i_Cj"'
     body:
       encoding: UTF-8
-      string: '{"serviceErrorCode":100,"message":"Not enough permissions to access:
-        GET /me","status":403}'
+      string: '{"localizedLastName":"MT","lastName":{"localized":{"en_US":"MT"},"preferredLocale":{"country":"US","language":"en"}},"firstName":{"localized":{"en_US":"John"},"preferredLocale":{"country":"US","language":"en"}},"profilePicture":{"displayImage":"urn:li:digitalmediaAsset:C4E03AQFtCZHMSeq2cg"},"id":"test","localizedFirstName":"John"}'
     http_version: 
-  recorded_at: Tue, 30 Apr 2019 13:50:50 GMT
+  recorded_at: Tue, 07 May 2019 07:09:35 GMT
 recorded_with: VCR 4.0.0
