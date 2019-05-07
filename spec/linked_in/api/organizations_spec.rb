@@ -24,11 +24,10 @@ describe LinkedIn::Organizations do
   end
 
   it "should load correct organization data" do
-    pending("Check after organization API Access")
     VCR.use_cassette("organization data") do
-      data = api.organization(id: 11571530)
-      expect(data.id).to eq 11571530
-      expect(data.name).to eq( {"localized"=>{"en_us"=>"del Nariz Social Media"}, "preferred_locale"=>{"country"=>"US", "language"=>"en"}} )
+      data = api.organization(id: 14418463)
+      expect(data.id).to eq 14418463
+      expect(data.vanity_name).to eq( "test-app-2")
     end
   end
 
